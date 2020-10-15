@@ -1,14 +1,13 @@
 import time
 
 fruits = 'orange'
-name = input("what is your name user:")
+name = input("what is your name user: ")
 print("Welcome " + name, "to the game of hangman")
 time.sleep(2)
-print("You have five turns to guess the name of the fruit " + name, "!")
+print("You have seven turns to guess the name of the fruit " + name)
 time.sleep(3)
 guess = " "
-turns = 10
-
+turns = 7
 
 while turns > 0:
     failed = 0
@@ -21,19 +20,17 @@ while turns > 0:
 
     if failed == 0:
         print("well done")
-        print("The word is: ", fruits)
+        print("The word is: ",fruits)
         break
-    user_guess = input("Guess a letter:")
+
+    user_guess = input("Guess a letter: ")
     guess += user_guess
 
     if user_guess not in fruits:
         turns -= 1
         print("wrong")
-        print("you have ", + turns, "more guesses")
+        print("you have", + turns, "more guesses")
 if turns == 0:
-     print("You lose, LOSER")
-
-
-
-
-
+    print("You lose, LOSER")
+    time.sleep(3)
+    print("The word is " + fruits, "EJIT")
